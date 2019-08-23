@@ -24,7 +24,7 @@ class LinkedList {
     catch (err) {
       console.log(err);
     }
-    if (this.head === null) {
+    if (this.size === 0) {
       this.addFirst(data);
     } else {
       this.addLast(data);
@@ -36,19 +36,16 @@ class LinkedList {
     newNode.next = this.head;
     this.head = newNode;
     this.size++;
+    if (this.size === 1) this.tail = newNode;
   }
   
   addLast(data) {
     newNode = new Node(data);
-    if (this.head === null) {
+    if (this.size === 0) {
       this.head = newNode;
       this.tail = newNode;
     } else {
-      let currentNode = this.head;
-      while (currentNode.next != null) {
-          currentNode = currentNode.next;
-      }
-      currentNode.next = newNode;
+      this.tail.next = newNode;
       this.tail = newNode;
     }
     this.size++;
@@ -74,28 +71,36 @@ class LinkedList {
     if (this.head === null) {
       throw new Error('This linked list is empty!');
     } else {
+      let removedNode = this.head;
       this.head = this.head.next;
+      this.size--;
+      return removedNode;
     }
-    this.size--;
   }
   
   removeLast() {
     if (this.head === null) {
       throw new Error('This linked list is empty!');
     } else if (this.head.next === null) {
+      let removedNode = this.head;
       this.head = null;
       this.tail = null;
+      this.size--;
+      return removedNode;
     } else {
       let leadPointer = this.head.next;
       let followPointer = this.head;
+      let removedNode;
       while (leadPointer.next != null) {
         leadPointer = leadPointer.next;
         followPointer = followPointer.next;
       }
+      removedNode = followPointer.next;
       followPointer.next = null;
       this.tail = followPointer;
+      this.size--;
+      return removedNode;
     }
-    this.size--;
   }
   
   remove(data) {
@@ -114,21 +119,22 @@ class LinkedList {
     while (pointer.next != null) {
       counter++;
       if (counter === index) {
+        let removedNode = pointer.next;
         pointer.next = pointer.next.next;
         if (counter === (this.size - 1)) {
           this.tail = pointer;
         }
         this.size--;
-        return true;
+        return removedNode;
       }
       pointer = pointer.next;
     }
   }
   
   clear() {
-    while (this.size > 0) {
-      this.removeLast();
-    }
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
   }
   
   contains(data) {
