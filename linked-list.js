@@ -32,7 +32,7 @@ class LinkedList {
   }
   
   addFirst(data) {
-    newNode = new Node(data);
+    let newNode = new Node(data);
     newNode.next = this.head;
     this.head = newNode;
     this.size++;
@@ -40,7 +40,7 @@ class LinkedList {
   }
   
   addLast(data) {
-    newNode = new Node(data);
+    let newNode = new Node(data);
     if (this.size === 0) {
       this.head = newNode;
       this.tail = newNode;
@@ -52,36 +52,26 @@ class LinkedList {
   }
   
   peekFirst() {
-    if (this.head === null) {
-      throw new Error('This linked list is empty!');
-    } else {
-      return this.head.data;
-    }
+    if (this.head === null) throw new Error('This linked list is empty!');
+    return this.head.data;
   }
   
   peekLast() {
-    if (this.head === null) {
-      throw new Error('This linked list is empty!');
-    } else {
-      return this.tail.data;
-    }
+    if (this.head === null) throw new Error('This linked list is empty!');
+    return this.tail.data;
   }
   
   removeFirst() {
-    if (this.head === null) {
-      throw new Error('This linked list is empty!');
-    } else {
-      let removedNode = this.head;
-      this.head = this.head.next;
-      this.size--;
-      return removedNode;
-    }
+    if (this.head === null) throw new Error('This linked list is empty!');
+    let removedNode = this.head;
+    this.head = this.head.next;
+    this.size--;
+    return removedNode;
   }
   
   removeLast() {
-    if (this.head === null) {
-      throw new Error('This linked list is empty!');
-    } else if (this.head.next === null) {
+    if (this.head === null) throw new Error('This linked list is empty!');
+    if (this.head.next === null) {
       let removedNode = this.head;
       this.head = null;
       this.tail = null;
@@ -105,11 +95,8 @@ class LinkedList {
   
   remove(data) {
     let index = this.indexOf(data);
-    if (index === -1) {
-      throw new Error ('The specified data is not contained within this linked list.');
-    } else {
-      this.removeAt(index);
-    }
+    if (index === -1) throw new Error ('The specified data is not contained within this linked list.');
+    this.removeAt(index);
   }
   
   removeAt(index) {
@@ -155,20 +142,17 @@ class LinkedList {
   }
   
   toString() {
-    if (this.head === null) {
-      throw new Error('This linked list is empty!');
-    } else {
-      let outputStr = '';
-      let currentNode = this.head;
+    if (this.head === null) throw new Error('This linked list is empty!');
+    let outputStr = '';
+    let currentNode = this.head;
+    outputStr += String(currentNode.data);
+    if (currentNode.next != null) outputStr += ', ';
+    while (currentNode.next != null) {
+      currentNode = currentNode.next; 
       outputStr += String(currentNode.data);
       if (currentNode.next != null) outputStr += ', ';
-      while (currentNode.next != null) {
-        currentNode = currentNode.next; 
-        outputStr += String(currentNode.data);
-        if (currentNode.next != null) outputStr += ', ';
-      }
-      return outputStr;
     }
+    return outputStr;
   }
    
 }
