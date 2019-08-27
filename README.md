@@ -11,38 +11,39 @@ Common data structures implemented in JavaScript.
 5. TBC
 
 
-
 ## Linked List
 A new linked list object can be instantiated using the new operator with the linked list constructor, i.e., `new LinkedList()`.
 
 This class implements a singly-linked list.
 
-_It is recommended that any data added to the linked list is of a primitive data type, due to the present lack of object equality comparison. This will be updated in the near future to include object equality functionality but in the meantime please stick to primitive data types in order for the linked list to function as expected._
+_*It is recommended that any data added to the linked list is of a primitive data type, due to the present lack of object equality comparison. This will be updated in the near future to include object equality functionality but in the meantime please stick to primitive data types in order for the linked list to function as expected._
 
 Method Summary:
 
-* `size()` - 
-* `isEmpty()` - 
-* `add(data)` - 
-* `addFirst(data)` - 
-* `addLast(data)` - 
-* `peekFirst()` - 
-* `peekLast()` - 
-* `removeFirst()` -
-* `removeLast()` - 
-* `remove(data)` - 
-* `removeAt(index)` - 
-* `clear()` - 
-* `contains(data)` - 
-* `indexOf(data)` - 
-* `toString()` - 
+* `size()` - returns the number of elements in the list.
+* `isEmpty()` - returns a boolean based on whether the list contains any elements.
+* `add(data)` - inserts the given data element in the next position in the list.
+* `addFirst(data)` - inserts the given data element at the beginning of the list.
+* `addLast(data)` - inserts the given data element at the end of the list.
+* `peekFirst()` - returns the data from the element at the beginning of the list.
+* `peekLast()` - returns the data from the element at the end of the list.
+* `removeFirst()` - removes the element from the beginning of the list and returns the data from it.
+* `removeLast()` - removes the element at the end of the list and returns the data from it.
+* `remove(data)` - searches the list for the given data and removes it from the list, returning the data from that element.
+* `removeAt(index)` - removes an element from the given index in the list and returns the data from it.
+* `clear()` - clears the list so that it no longer contains any data.
+* `contains(data)` - returns a boolean based on whether the list contains the given data.
+* `indexOf(data)` - returns the index of the given data in the list.
+* `toString()` - returns a string representation of the data contained in the list.
+
+[back to top](#contents)
 
 ## Stack
 A new stack object can be instantiated using the new operator with the stack constructor, i.e., `new Stack()`.
 
 This stack class is implemented using a linked list.
 
-_It is recommended that any data added to the stack is of a primitive data type, due to the present lack of object equality comparison. This will be updated in the near future to include object equality functionality but in the meantime please stick to primitive data types in order for this data structure to function as expected._
+_*It is recommended that any data added to the stack is of a primitive data type, due to the present lack of object equality comparison. This will be updated in the near future to include object equality functionality but in the meantime please stick to primitive data types in order for this data structure to function as expected._
 
 Method Summary:
 
@@ -53,12 +54,14 @@ Method Summary:
 * `pop()` - removes the next element from the top of the stack and returns the data from it.
 * `contains(data)` - returns a boolean based on whether the given data is contained within the stack.  
 
+[back to top](#contents)
+
 ## Queue
 A new queue object can be instantiated using the new operator with the queue constructor, i.e., `new Queue()`.
 
 This queue class is implemented using a linked list.
 
-_It is recommended that any data added to the queue is of a primitive data type, due to the present lack of object equality comparison. This will be updated in the near future to include object equality functionality but in the meantime please stick to primitive data types in order for this data structure to function as expected._
+_*It is recommended that any data added to the queue is of a primitive data type, due to the present lack of object equality comparison. This will be updated in the near future to include object equality functionality but in the meantime please stick to primitive data types in order for this data structure to function as expected._
 
 Method Summary:
 
@@ -68,6 +71,8 @@ Method Summary:
 * `enqueue(data)` - adds a new data element to the back of the queue.
 * `dequeue()` - removes the element from the front of the queue and returns the data from it.
 * `contains(data)` - returns a boolean based on whether the given data is contained within the queue. 
+
+[back to top](#contents)
 
 ## Hash Table
 A new hash table object can be instantiated using the new operator with the hash table constructor, i.e., `new HashTable()`.
@@ -91,5 +96,7 @@ Method Summary:
 * `remove(key)` - removes the given key and its corresponding value from the hash table.
 * `keys()` - returns an array containing all keys contained in the hash table
 * `values()` - returns an array containing all values contained in the hash table
+
+[back to top](#contents)
 
 ...
