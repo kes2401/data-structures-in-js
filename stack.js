@@ -31,7 +31,7 @@ class Stack {
     let removedNode = this.head;
     this.head = this.head.next;
     this.size--;
-    return removedNode;
+    return removedNode.data;
   }
   
   contains(data) {
