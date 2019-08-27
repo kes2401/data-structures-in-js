@@ -38,7 +38,7 @@ class Queue {
     this.head = this.head.next;
     this.size--;
     if (this.size === 0) this.tail = null;
-    return removedNode;
+    return removedNode.data;
   }
   
   contains(data) {
