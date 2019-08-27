@@ -66,7 +66,7 @@ class LinkedList {
     let removedNode = this.head;
     this.head = this.head.next;
     this.size--;
-    return removedNode;
+    return removedNode.data;
   }
   
   removeLast() {
@@ -76,7 +76,7 @@ class LinkedList {
       this.head = null;
       this.tail = null;
       this.size--;
-      return removedNode;
+      return removedNode.data;
     } else {
       let leadPointer = this.head.next;
       let followPointer = this.head;
@@ -89,7 +89,7 @@ class LinkedList {
       followPointer.next = null;
       this.tail = followPointer;
       this.size--;
-      return removedNode;
+      return removedNode.data;
     }
   }
   
@@ -112,7 +112,7 @@ class LinkedList {
           this.tail = pointer;
         }
         this.size--;
-        return removedNode;
+        return removedNode.data;
       }
       pointer = pointer.next;
     }
