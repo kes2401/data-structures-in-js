@@ -8,7 +8,8 @@ Common data structures implemented in JavaScript.
 2. [Stack](#stack)
 3. [Queue](#queue)
 4. [Hash Table](#hash-table)
-5. TBC
+5. [Binary Heap / Priority Queue] (#binary-heap)
+6. [Binary Search Tree] (#binary-search-tree)
 
 
 ## Linked List
@@ -99,4 +100,14 @@ Method Summary:
 
 [back to top](#contents)
 
+## Binary Heap
+
 ...
+
+[back to top](#contents)
+
+## Binary Search Tree
+
+to follow soon...
+
+[back to top](#contents)
