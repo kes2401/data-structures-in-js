@@ -9,7 +9,7 @@ class HashTable {
   
   constructor(initSize=24) {
     this.table = new Array(initSize).fill(null);
-    this.size = 0;
+    this.hashtableSize = 0;
     this.capacity = initSize;
   }
   
@@ -22,17 +22,17 @@ class HashTable {
     return hashcode % 883;
   }
   
-  getSize() {
-    return this.size;
+  size() {
+    return this.hashtableSize;
   }
   
   isEmpty() {
-    return this.size === 0;
+    return this.hashtableSize === 0;
   }
   
   clear() {
     this.table.fill(null);
-    this.size = 0;
+    this.hashtableSize = 0;
     return 'Hash Table cleared.'
   }
   
@@ -55,7 +55,7 @@ class HashTable {
       this.table[index] = new Bucket();
     }
     this.table[index].add(key, val);
-    this.size++;
+    this.hashtableSize++;
     
     if (this.table[index].length >= this.chainLimit) console.log('WARNING - The chain length in this bucket has breached the limit!');
     
@@ -80,7 +80,7 @@ class HashTable {
   remove(key) {
     let index = hash(key) % this.capacity;
     if (this.table[index] === null) throw new Error('This key was not found in the table.');
-    this.size--;
+    this.hashtableSize--;
     return this.table[index].remove(key);
   }
   
@@ -102,7 +102,7 @@ class HashTable {
   }
   
   isLoadInOrder() {
-    return (this.size / this.capacity) < this.loadFactorLimit;
+    return (this.hashtableSize / this.capacity) < this.loadFactorLimit;
   }
   
   keys() {
