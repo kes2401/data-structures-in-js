@@ -4,15 +4,15 @@ class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
-    this.size = 0;
+    this.listSize = 0;
   }
   
   size() {
-    return this.size;
+    return this.listSize;
   }
   
   isEmpty() {
-    return this.size === 0;
+    return this.listSize === 0;
   }
   
   add(data) {
@@ -24,7 +24,7 @@ class LinkedList {
     catch (err) {
       console.log(err);
     }
-    if (this.size === 0) {
+    if (this.listSize === 0) {
       this.addFirst(data);
     } else {
       this.addLast(data);
@@ -35,20 +35,20 @@ class LinkedList {
     let newNode = new Node(data);
     newNode.next = this.head;
     this.head = newNode;
-    this.size++;
-    if (this.size === 1) this.tail = newNode;
+    this.listSize++;
+    if (this.listSize === 1) this.tail = newNode;
   }
   
   addLast(data) {
     let newNode = new Node(data);
-    if (this.size === 0) {
+    if (this.listSize === 0) {
       this.head = newNode;
       this.tail = newNode;
     } else {
       this.tail.next = newNode;
       this.tail = newNode;
     }
-    this.size++;
+    this.listSize++;
   }
   
   peekFirst() {
@@ -65,7 +65,7 @@ class LinkedList {
     if (this.head === null) throw new Error('This linked list is empty!');
     let removedNode = this.head;
     this.head = this.head.next;
-    this.size--;
+    this.listSize--;
     return removedNode.data;
   }
   
@@ -75,7 +75,7 @@ class LinkedList {
       let removedNode = this.head;
       this.head = null;
       this.tail = null;
-      this.size--;
+      this.listSize--;
       return removedNode.data;
     } else {
       let leadPointer = this.head.next;
@@ -88,7 +88,7 @@ class LinkedList {
       removedNode = followPointer.next;
       followPointer.next = null;
       this.tail = followPointer;
-      this.size--;
+      this.listSize--;
       return removedNode.data;
     }
   }
@@ -100,7 +100,7 @@ class LinkedList {
   }
   
   removeAt(index) {
-    if (index < 0 || index >= this.size) throw new Error('Invalid index, Out of range.')
+    if (index < 0 || index >= this.listSize) throw new Error('Invalid index, Out of range.')
     let counter = 0;
     let pointer = this.head;
     while (pointer.next != null) {
@@ -108,10 +108,10 @@ class LinkedList {
       if (counter === index) {
         let removedNode = pointer.next;
         pointer.next = pointer.next.next;
-        if (counter === (this.size - 1)) {
+        if (counter === (this.listSize - 1)) {
           this.tail = pointer;
         }
-        this.size--;
+        this.listSize--;
         return removedNode.data;
       }
       pointer = pointer.next;
@@ -121,7 +121,7 @@ class LinkedList {
   clear() {
     this.head = null;
     this.tail = null;
-    this.size = 0;
+    this.listSize = 0;
   }
   
   contains(data) {
