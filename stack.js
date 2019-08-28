@@ -3,15 +3,15 @@ class Stack {
   
   constructor() {
     this.head = null;
-    this.size = 0;
+    this.stackSize = 0;
   }
     
   size() {
-    return this.size;
+    return this.stackSize;
   }
   
   isEmpty() {
-    return this.size === 0;
+    return this.stackSize === 0;
   }
   
   peek() {
@@ -23,14 +23,14 @@ class Stack {
     let newNode = new Node(data);
     newNode.next = this.head;
     this.head = newNode;
-    this.size++;
+    this.stackSize++;
   }
   
   pop() {
     if (this.head === null) throw new Error('This stack is empty!');
     let removedNode = this.head;
     this.head = this.head.next;
-    this.size--;
+    this.stackSize--;
     return removedNode.data;
   }
   
