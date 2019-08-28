@@ -87,7 +87,7 @@ The hash table will automatically re-size if the load factor (the current size d
 
 Method Summary:
 
-* `getSize()` - returns the number of keys in the hash table.
+* `size()` - returns the number of keys in the hash table.
 * `isEmpty()` - returns a boolean value based on whether the hash table has no key-value pairs.
 * `clear()` - clears the hash table so it no longer contains any key-value pairs.
 * `hasKey(key)` - returns a boolean value based on whether the given key is contained within the hash table.
