@@ -8,8 +8,8 @@ Common data structures implemented in JavaScript.
 2. [Stack](#stack)
 3. [Queue](#queue)
 4. [Hash Table](#hash-table)
-5. [Binary Heap / Priority Queue] (#binary-heap)
-6. [Binary Search Tree] (#binary-search-tree)
+5. [Binary Heap / Priority Queue](#binary-heap)
+6. [Binary Search Tree](#binary-search-tree)
 
 
 ## Linked List
@@ -95,14 +95,36 @@ Method Summary:
 * `insert(key, value)` - insert a new key-value pair into the hash table, where `key` must be a unique string and `value` can be any value.
 * `get(key)` - returns the value mapped to the given key.
 * `remove(key)` - removes the given key and its corresponding value from the hash table.
-* `keys()` - returns an array containing all keys contained in the hash table
-* `values()` - returns an array containing all values contained in the hash table
+* `keys()` - returns an array containing all keys contained in the hash table.
+* `values()` - returns an array containing all values contained in the hash table.
 
 [back to top](#contents)
 
 ## Binary Heap
 
-...
+A new binary heap object can be instantiated using the new operator with the queue constructor, i.e., `new BinaryHeap()`.
+
+This may data structure also be used for a Priority Queue implementation.
+
+By default the Binary Heap is created as a Min Heap, however you can create a Max Heap by optionally passing in the string `'max'` to the constructor, i.e., `new BinaryHeap('max')`.
+
+_*This binary heap is designed only to work with single primitive values, and not objects. Values must be comparable. It is recommended that any data elements added to the heap are of type `Number`. Strings could be used instead, but please be aware of the basic rules for string comparison in JavaScript which uses Unicode values. You can read more about this [here](https://javascript.info/comparison#string-comparison). Mixing these types would not be recommended. Further functionality may be added in the future._
+
+Method Summary:
+
+* `size()` - returns the number of elements in the heap.
+* `isEmpty()` - returns a boolean based on whether the heap has no elements.
+* `clear()` - clears the binary heap so that it no longer contains any elements.
+* `insert(value)` - insert a new value into the binary heap, where `value` should be of comparable primitive type (also, see notes above).
+* `contains(value)` - returns a boolean based on whether the given value is contained in the heap.
+* `buildHeap(array)` - builds a new heap containing the elements contained within the array passed in.
+* `extract()` - removes and returns the element from the top of the heap (the front of the Priority Queue).
+* `extractAt(index)` - removes and returns the element contained at the given index.
+* `peek()` - returns the element from the top of the heap (the front of the Priority Queue), without removing it.
+* `get(index)` - returns the data contained at the given index, without removing it.
+* `toString()` - returns a string representation of all elements contained in the heap.
+* `isMinHeap([root])` - function provided for testing that the heap satisfies the heap invariant for a valid Min Heap. The `root` argument is optional and allows you to enter a starting index for the test, defaulting to `0` if no argument is provided.
+* `isMaxHeap([root])` - function provided for testing that the heap satisfies the heap invariant for a valid Max Heap. The `root` argument is optional and allows you to enter a starting index for the test, defaulting to `0` if no argument is provided.
 
 [back to top](#contents)
 
