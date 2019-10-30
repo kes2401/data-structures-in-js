@@ -130,6 +130,25 @@ Method Summary:
 
 ## Binary Search Tree
 
-to follow soon...
+A new binary search tree object can be instantiated using the new operator with the BST constructor, i.e., `new BinarySearchTree()`.
+
+New nodes are added to the tree in key-value pairs where the key must be a unique value of type Number.
+
+_*This BST implementation is not yet finished as the removal method and the pre-order, in-order and post-order traversal methods still require completing the implementation*_
+
+* `size()` - returns the number of nodes in the tree.
+* `isEmpty()` - returns a boolean based on whether the tree has no elements.
+* `contains(key)` - returns a boolean based on whether the given key is contained within the tree, where the key should be a Number.
+* `add(key, value)` - inserts a new node into the tree, where key is a Number and value can be of any type.
+* `remove(key)` - removes the node with given key from the tree, if it exists. [_*To be implemented*_]
+* `find(key)` - finds a node with the matching key and returns it if it exists, otherwise returns `null`.
+* `findMin()` - finds and returns the lowest value key for any node in the tree.
+* `findMax()` - finds and returns the highest value key for any node in the tree.
+* `value(key)` - finds and returns the value of the node for the matching key, or otherwise `null` if it does not exist.
+* `height()` - returns the height of the tree.
+* `traverse(order)` - calls the selected order traversal method, where options are `preorder`, `inorder` or `postorder`.
+* `preorder()` - prints a Pre-Order traversal of the tree. [_*To be implemented*_]
+* `inorder()` - prints an In-Order traversal of the tree. [_*To be implemented*_]
+* `postorder()` - prints a Post-Order traversal of the tree. [_*To be implemented*_]
 
 [back to top](#contents)
